@@ -1,3 +1,7 @@
+/*
+ 4-3-7 打印图形
+打印如下图形。
+*/
 #include<stdio.h>
 int main()
 {
