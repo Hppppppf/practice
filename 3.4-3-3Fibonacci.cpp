@@ -1,3 +1,9 @@
+/*
+ 4-3-3 输出Fibonacci数列的前10项
+输出Fibonacci数列的前10项。Fibonacci数列的计算方法如下。
+Fn=1(n=1,2)
+Fn=Fn-1+Fn-2(n>=3)
+*/
 #include<stdio.h>
 int main()
 {
