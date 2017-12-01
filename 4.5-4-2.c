@@ -18,5 +18,5 @@ double V(double r,double h)
 
 double S(double r,double h)
 {
-    return pi*r*r+2*pi*r*h/2.0;
+    return pi*r*r+2*pi*r*sqrt(r*r+h*h)/2.0;
 }

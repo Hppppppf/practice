@@ -3,8 +3,6 @@ double CtoF(double);
 int main()
 {
     double c;
-    int i=1,x;
-    double a[20];
     while(1)
     {
         scanf("%lf",&c);
@@ -14,13 +12,8 @@ int main()
         }
         else
         {
-            a[i]=c;
-            i++;
+            printf("Cel=%lf, Fah=%lf\n",c,CtoF(c));
         }
-    }
-    for (x=1;x<i;x++)
-    {
-        printf("Cel=%lf, Fah=%lf\n",a[x],CtoF(a[x]));
     }
     return 0;
 }

@@ -6,7 +6,10 @@ int main()
     int a,b;
     int i,k;
     int count=0;
-    scanf("%d%d",&a,&b);
+    do
+    {
+        scanf("%d%d",&a,&b);
+    }while(a<10||b>1000||b<a);
     for (n=a;n<=b;n++)
     {
         k=(int)sqrt(n);

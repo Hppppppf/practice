@@ -1,12 +1,13 @@
 #include<stdio.h>
-double FUN(int,double);
-double SUM(int,double,double);
 int main()
 {
     int year,i;
     double capital,rate,sum;
-    printf("Year:");
-    scanf("%d",&year);
+    do
+    {
+        printf("Year:");
+        scanf("%d",&year);
+    }while(year!=1&&year!=2&&year!=3&&year!=5);
     printf("Capital:");
     scanf("%lf",&capital);
     switch (year)

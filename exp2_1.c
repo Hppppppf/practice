@@ -14,7 +14,7 @@ int main()
             }
             else
             {
-                if (fabs(a*a+b*b-c*c)<1e-6||fabs(a*a+c*c-b*b)<1e-6||fabs(c*c+b*b-b*b)<1e-6)
+                if (fabs(a*a+b*b-c*c)<1e-6||fabs(a*a+c*c-b*b)<1e-6||fabs(c*c+b*b-a*a)<1e-6)
                 {
                     printf("等腰直角三角形");
                 }
@@ -26,13 +26,13 @@ int main()
         }
         else
         {
-            if (a*a+b*b==c*c||a*a+c*c==b*b||c*c+b*b==b*b)
+            if (fabs(a*a+b*b-c*c)<1e-6||fabs(a*a+c*c-b*b)<1e-6||fabs(c*c+b*b-a*a)<1e-6)
             {
                 printf("直角三角形");
             }
             else
             {
-                printf("普通三角形");
+                printf("一般三角形");
             }
         }
     }

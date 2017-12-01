@@ -38,5 +38,6 @@ int degree(int array[ ][COL],int i,int n)
 	int k,sum;
 	for (k=0;k<n;k++)
 	    sum+=array[i][k];
+	getchar();
 	return sum;
 }
