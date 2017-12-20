@@ -5,7 +5,7 @@ int main()
     DrawPic(7,'*');
     DrawPic(11,'@');
     DrawPic(20,'$');
-    DrawPic(60,'#');
+    DrawPic(61,'#');
     return 0;
 }
 void DrawPic(int n,char c)

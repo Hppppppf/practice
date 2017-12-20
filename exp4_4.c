@@ -1,18 +1,19 @@
 #include<stdio.h>
-#define N 5
+#define N 3
 void Input(int a[][N],int n);
 void Output(int a[][N],int n);
-int Sum1(int a[][N],int n);
-int Sum2(int a[][N],int n);
+void Turn(int a[][N],int n);
 int main()
 {
     int a[N][N];
     Input(a,N);
     Output(a,N);
-    printf("主对角线之和=%d\n",Sum1(a,N));
-    printf("次对角线之和=%d\n",Sum2(a,N));
+    printf("\n");
+    Turn(a,N);
+    Output(a,N);
     return 0;
 }
+
 
 void Input(int a[][N],int n)
 {
@@ -23,6 +24,7 @@ void Input(int a[][N],int n)
             scanf("%d",&p[i][j]);
     return;
 }
+
 
 void Output(int a[][N],int n)
 {
@@ -36,24 +38,16 @@ void Output(int a[][N],int n)
     return;
 }
 
-int Sum1(int a[][N],int n)
+void Turn(int a[][N],int n)
 {
-    int i,j=0,sum=0;
+    int i,j,temp;
+    int (*p)[N]=a;
     for (i=0;i<n;i++)
-    {
-        sum+=a[i][j];
-        j++;
-    }
-    return sum;
-}
-
-int Sum2(int a[][N],int n)
-{
-    int i,j=n-1,sum=0;
-    for (i=0;i<n;i++)
-    {
-        sum+=a[i][j];
-        j--;
-    }
-    return sum;
+        for (j=0;j<i;j++)
+        {
+            temp=p[i][j];
+            p[i][j]=p[j][i];
+            p[j][i]=temp;
+        }
+    return;
 }
