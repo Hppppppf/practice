@@ -35,8 +35,8 @@ int main()
 void timerandom(int *p,int n)
 {
     int i;
-    srand(time(NULL));
-    for (i=0;i<N;i++)
+    //srand(time(NULL));//似乎不是随机，变化范围太小
+    for (i=0;i<n;i++)
         p[i]=rand()%10000;
 }
 
