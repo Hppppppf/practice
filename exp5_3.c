@@ -2,6 +2,7 @@
 #include<string.h>
 #define N 10
 #define len 80
+
 void Input(char [][len],int );
 void Output(char [][len],int );
 void Sort(char [][len],int );
@@ -9,11 +10,11 @@ void Sort(char [][len],int );
 int main()
 {
     char str[N][len];
-    Input(str,N);
+    Input(str,N);//输入字符串
     printf("\n");
-    Output(str,N);
+    Output(str,N);//输出字符串
     printf("\n");
-    Sort(str,N);
+    Sort(str,N);//排序
     Output(str,N);
     return 0;
 }
@@ -33,7 +34,7 @@ void Output(char s[][len],int n)
     return;
 }
 
-void Sort(char s[][len],int n)
+void Sort(char s[][len],int n)//Ã°ÅÝÅÅÐò
 {
     int i,j;
     char temp[len];

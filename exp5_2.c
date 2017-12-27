@@ -12,12 +12,13 @@ int main()
 {
     double array[N],*p=array;
     int index;
-    Input(array,N);
-    Output2(array,N);
-    printf("Max=array[%d]=%f\n",index=Max(array,N),array[index+1]);
-    printf("Min=array[%d]=%f\n",index=Min(array,N),array[index+1]);
+    Input(array,N);//输入字符串
+    Output2(array,N);//输出字符串及地址
+    printf("Max=array[%d]=%f\n",index=Max(array,N),array[index+1]);//输出最大值及其下标
+    printf("Min=array[%d]=%f\n",index=Min(array,N),array[index+1]);//输出最小值及其下标
     Sort(array,N);
     Output(array,N);
+    return 0;
 }
 
 void Input(double *p,int n)
@@ -69,7 +70,7 @@ double Ave(double *p,int n)
     return sum*1.0/n;
 }
 
-void Sort(double *p,int n)
+void Sort(double *p,int n)//选择法排序
 {
     int i,j;
     double temp;
