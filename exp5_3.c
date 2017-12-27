@@ -17,7 +17,6 @@ int main()
     Output(str,N);
     return 0;
 }
-
 void Input(char s[][len],int n)
 {
     int i;

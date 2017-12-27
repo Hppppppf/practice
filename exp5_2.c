@@ -32,7 +32,7 @@ void Output(double *p,int n)
 {
     int i;
     for (i=0;i<n;i++)
-        printf("%f\n",p[i]);
+        printf("%10.2f\n",p[i]);
     return;
 }
 
@@ -40,7 +40,7 @@ void Output2(double *p,int n)
 {
     int i;
     for (i=0;i<n;i++)
-        printf("%f address:%p\n",p[i],&p[i]);
+        printf("%10.2f address:%p\n",p[i],&p[i]);
     return;
 }
 

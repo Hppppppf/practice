@@ -1,52 +1,75 @@
 #include<stdio.h>
-void swap1(int ,int );
-void swap2(int *,int );
-void swap3(int *,int *);
-void swap4(int *,int *);
+#define N 3
+
+typedef struct Student
+    {
+        char ID[20];
+        char name[20];
+        double score1;
+        double score2;
+        double score3;
+        double ave;
+    }Student;
+
+void Input(struct Student *pa ,int n);
+void Sort(struct Student *pa ,int n);
+void Output(const struct Student *pa ,int n);
+
 int main()
 {
-    int x = 10, y = 20;
-    printf("x = %d, y = %d\n",x,y);
-    swap1(x,y);
-    printf("after swap1 : x = %d, y = %d\n\n",x,y);
-    x = 10;
-    y = 20;
-    printf("x = %d, y = %d\n",x,y);
-    swap2(&x,y);
-    printf("after swap2 : x = %d, y = %d\n\n",x,y);
-    x = 10;
-    y = 20;
-    printf("x = %d, y = %d\n",x,y);
-    swap3(&x,&y);
-    printf("after swap3 : x = %d, y = %d\n\n",x,y);
-    x = 10;
-    y = 20;
-    printf("x = %d, y = %d\n",x,y);
-    swap4(&x,&y);
-    printf("after swap4 : x = %d, y = %d\n\n",x,y);
+    int i=0;
+    Student st[N];
+    Input(st,N);
+    while (i<N)
+    {
+        if (st[i].score1<60||st[i].score2<60||st[i].score3<60)
+            printf(" ID:%s \n name:%s \n score1:%.1f \n score2:%.1f \n score3:%.1f \n ave:%.2f",st[i].ID,st[i].name,st[i].score1,st[i].score2,st[i].score3,st[i].ave);
+            printf("\n");
+        i++;
+    }
+    Sort(st,N);
+    Output(st,N);
     return 0;
 }
-void swap1(int a,int b)
+
+void Input(struct Student *pa ,int n)
 {
-    int t=a;
-    a=b;
-    b=t;
+    int i;
+    for (i=0;i<n;i++)
+    {
+        scanf("%s%s%lf%lf%lf",pa[i].ID,pa[i].name,&pa[i].score1,&pa[i].score2,&pa[i].score3);
+        pa[i].ave=(pa[i].score1+pa[i].score2+pa[i].score3)/3.0;
+    }
+    return;
 }
-void swap2(int *a,int b)
+
+void Sort(struct Student*pa ,int n)
 {
-    int t=*a;
-    *a=b;
-    b=t;
+    int i,j,k=0;
+    for(k=0;k<n-1;k++)
+    {
+        j=k;
+        for (i=j+1;i<n;i++)
+            if (pa[j].ave<pa[i].ave)
+                j=i;
+        if (j!=k)
+        {
+            Student temp;
+            temp=pa[k];
+            pa[k]=pa[j];
+            pa[j]=temp;
+        }
+    }
+    return;
 }
-void swap3(int *a,int *b)
+
+void Output(const struct Student*pa ,int n)
 {
-    int t=*a;
-    *a=*b;
-    *b=t;
-}
-void swap4(int *a,int *b)
-{
-    int *t=a;
-    a=b;
-    b=t;
+    int i;
+    for (i=0;i<n;i++)
+    {
+        printf(" ID:%s \n name:%s \n score1:%.1f \n score2:%.1f \n score3:%.1f \n ave:%.2f",pa[i].ID,pa[i].name,pa[i].score1,pa[i].score2,pa[i].score3,pa[i].ave);
+        printf("\n");
+    }
+    return;
 }
