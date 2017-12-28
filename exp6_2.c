@@ -5,23 +5,23 @@ int main()
 {
     FILE *f1,*f2;
     char ch;
-    f1=fopen("C:\\Users\\HPF\\practice\\f1.txt"/*D:\\f1.txt*/,"r");//´ò¿ªÎÄ¼þ
+    f1=fopen("C:\\Users\\HPF\\practice\\f1.txt"/*D:\\f1.txt*/,"r");//æ‰“å¼€æ–‡ä»¶
     f2=fopen("C:\\Users\\HPF\\practice\\f2.txt"/*D:\\f2.txt*/,"w");
-    if (f1==NULL || f2==NULL)//´ò¿ªÊ§°Ü
+    if (f1==NULL || f2==NULL)//æ‰“å¼€å¤±è´¥
     {
         printf("file error");
         exit(1);
     }
     while ((ch=fgetc(f1))!=EOF)
         {
-            putchar(ch);//´òÓ¡ÎÄ¼þ
-            if ((ch>'a'&&ch<'z')||(ch>'A'&&ch<'Z'))//ÅÐ¶ÏÊÇ·ñÎª×ÖÄ¸
+            putchar(ch);//æ‰“å°æ–‡ä»¶
+            if ((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))//åˆ¤æ–­æ˜¯å¦ä¸ºå­—æ¯
                 {
-                    fputc(ch,f2);//½«×ÖÄ¸´æÈëÎÄ¼þ
-                    fprintf(f2,"%d\n",ch);//½«×ÖÄ¸ASCIIÂë´æÈëÎÄ¼þ
+                    fputc(ch,f2);//å°†å­—æ¯å­˜å…¥æ–‡ä»¶
+                    fprintf(f2,"%d\n",ch);//å°†å­—æ¯ASCIIç å­˜å…¥æ–‡ä»¶
                 }
         }
-    fclose(f1);//¹Ø±ÕÎÄ¼þ
+    fclose(f1);//å…³é—­æ–‡ä»¶
     fclose(f2);
     return 0;
 }
