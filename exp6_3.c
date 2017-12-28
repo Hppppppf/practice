@@ -4,10 +4,10 @@
 
 typedef struct Student
 {
-    char ID[20];//Ñ§ºÅ
-    char name[30];//ĞÕÃû
-    int age;//ÄêÁä
-    double score;//·ÖÊı
+    char ID[20];//å­¦å·
+    char name[30];//å§“å
+    int age;//å¹´é¾„
+    double score;//åˆ†æ•°
 }Student;
 
 void Input(struct Student *pa ,int n);
@@ -19,21 +19,18 @@ int main()
     int i;
     Student st[N];
     FILE *fp;
-    fp=fopen("C:\\Users\\HPF\\practice\\Info.dat","wb");//´ò¿ªÎÄ¼ş
-    if ( fp==NULL )//´ò¿ªÊ§°Ü
+    fp=fopen("C:\\Users\\HPF\\practice\\Info.dat","wb");//æ‰“å¼€æ–‡ä»¶
+    if ( fp==NULL )//æ‰“å¼€å¤±è´¥
     {
         printf("file error");
         exit(1);
     }
-    for (i=0;i<N;i++)//ÊäÈëÑ§ÉúĞÅÏ¢
-    {
-        scanf("%s%s%d%lf",st[i].ID,st[i].name,&st[i].age,&st[i].score);
-    }
-    fwrite(st,sizeof(st),1,fp);//½«Ñ§ÉúĞÅÏ¢Ğ´ÈëÎÄ¼ş
-    fclose(fp);//¹Ø±ÕÎÄ¼ş
-    ReadOut(st,N);//½«ĞÅÏ¢´òÓ¡µ½ÆÁÄ»
+    Input(st,N);//è¾“å…¥å­¦ç”Ÿä¿¡æ¯
+    fwrite(st,sizeof(st),1,fp);//å°†å­¦ç”Ÿä¿¡æ¯å†™å…¥æ–‡ä»¶
+    fclose(fp);//å…³é—­æ–‡ä»¶
+    ReadOut(st,N);//å°†ä¿¡æ¯æ‰“å°åˆ°å±å¹•
     printf("\n");
-    Sort(st,N);//ÅÅĞò
+    Sort(st,N);//æ’åº
     ReadOut(st,N);
     return 0;
 }
@@ -53,16 +50,13 @@ void ReadOut(const struct Student*pa ,int n)
 {
     int i;
     for (i=0;i<n;i++)
-    {
-        printf("ID:%s \nname:%s \nage:%d \nscore:%.1f",pa[i].ID,pa[i].name,pa[i].age,pa[i].score);
-        printf("\n");
-    }
+        printf("ID:%s \nname:%s \nage:%d \nscore:%.1f \n",pa[i].ID,pa[i].name,pa[i].age,pa[i].score);
     return;
 }
 
-void Sort(struct Student*pa ,int n)//Ñ¡Ôñ·¨ÅÅĞò
+void Sort(struct Student*pa ,int n)//é€‰æ‹©æ³•æ’åº
 {
-    int i,j,k=0;
+    int i,j,k;
     for(k=0;k<n-1;k++)
     {
         j=k;
