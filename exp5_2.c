@@ -12,10 +12,10 @@ int main()
 {
     double array[N],*p=array;
     int index;
-    Input(array,N);//ÊäÈë×Ö·û´®
-    Output2(array,N);//Êä³ö×Ö·û´®¼°µØÖ·
-    printf("Max=array[%d]=%f\n",index=Max(array,N),array[index+1]);//Êä³ö×î´óÖµ¼°ÆäÏÂ±ê
-    printf("Min=array[%d]=%f\n",index=Min(array,N),array[index+1]);//Êä³ö×îĞ¡Öµ¼°ÆäÏÂ±ê
+    Input(array,N);//è¾“å…¥å®æ•°
+    Output2(array,N);//è¾“å‡ºå®æ•°åŠåœ°å€
+    printf("Max=array[%d]=%f\n",index=Max(array,N),array[index+1]);//è¾“å‡ºæœ€å¤§å€¼åŠå…¶ä¸‹æ ‡
+    printf("Min=array[%d]=%f\n",index=Min(array,N),array[index+1]);//è¾“å‡ºæœ€å°å€¼åŠå…¶ä¸‹æ ‡
     Sort(array,N);
     Output(array,N);
     return 0;
@@ -70,7 +70,7 @@ double Ave(double *p,int n)
     return sum*1.0/n;
 }
 
-void Sort(double *p,int n)//Ñ¡Ôñ·¨ÅÅĞò
+void Sort(double *p,int n)//é€‰æ‹©æ³•æ’åº
 {
     int i,j;
     double temp;
